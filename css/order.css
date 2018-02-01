@@ -1,0 +1,265 @@
+li{ list-style: none;}
+a{ text-decoration: none; color: black;}
+img{ display: block;}
+.left{ float: left; display: inline;}
+.right{ float: right; display: inline;}
+.clear:after{ clear: both; content: ''; display: block;}
+.clear{zoom: 1;}
+body{ font-family: "宋体"; background-color: #eeeeee;}
+/*以上为公共样式*/
+
+/*头部*/
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/*height: 3.1rem;*/
+	background-color: white;
+}
+.order_manage{
+	position: relative;
+	height: 1.65rem;
+	line-height: 1.65rem;
+	text-align: center;
+	font-size: 0.8rem;
+	border-bottom: 1px solid #e7e7e7;
+}
+.back{
+	position: absolute;
+	top: 0rem;
+	left: 0.55rem;
+}
+.back span{
+	font-size: 0.8rem;
+}
+.nav{
+	display: -webkit-box;
+	height: 1.425rem;
+}
+.nav li{
+	-webkit-box-flex: 1;
+	width: 0;
+	line-height: 1.375rem;
+	text-align: center;
+	font-size: 0.8rem;
+	border-bottom: 0.05rem solid transparent;
+}
+.nav li.current{
+	border-bottom: 0.05rem solid #ff5000;
+	color: #ff5000;
+}
+/*订单列表*/
+.container{
+	margin-top: 3.1rem;
+}
+.order_list{
+	/*display: none;*/
+}
+.order_list li{
+	margin-top: 0.325rem;
+	/*height: 6.75rem;*/
+	background-color: white;
+	border-bottom: 1px solid #d9d9d9;
+}
+.seller{
+	display: -webkit-box;
+	padding: 0 0.45rem;
+	height: 1.45rem;
+}
+.icon_tianmao{
+	margin-right: 0.4rem;
+	margin-top: 0.45rem;
+	width: 0.575rem;
+	height: 0.575rem;
+}
+.store_name{
+	display: block;
+	-webkit-box-flex: 1;
+	line-height: 1.45rem;
+	font-size: 0.6rem;
+}
+.store_name span{
+	float: left;
+}
+.icon-right{
+	font-size: 0.7rem;
+	color: #82898f;
+}
+.state{
+	line-height: 1.45rem;
+	font-size: 0.6rem;
+	color: #FF5000;
+}
+.content{
+	display: -webkit-box;
+	padding: 0.175rem 0.45rem;
+	height: 2.15rem;
+	background-color: #f5f5f5;
+}
+.content_img{
+	margin-right: 0.4rem;
+	width: 2.15rem;
+	height: 2.15rem;
+}
+.content_info{
+	-webkit-box-flex: 1;
+	font-size: 0.6rem;
+}
+.content_price{
+	width: 2.5rem;
+	font-size: 0.6rem;
+}
+.price{
+	text-align: right;
+	font-weight: bold;
+}
+.nums{
+	margin-top: 0.15rem;
+	text-align: right;
+	color: #666;
+}
+.total{
+	padding-right: 0.45rem;
+	height: 1.25rem;
+	line-height: 1.25rem;
+	text-align: right;
+	font-size: 0.7rem;
+}
+.total>span{
+	margin-left: 0.4rem;
+}
+.commodity_num{
+	font-weight: bold;
+}
+.dispose_order{
+	padding-right: 0.45rem;
+	height: 1.9rem;
+	border-top: 1px solid #E7E7E7;
+	font-size: 0.7rem;
+}
+.evaluate_order{
+	float: right;
+	margin-left: 0.2rem;
+	margin-top: 0.3rem;
+	padding: 0.2rem 0.4rem;
+	border: 1px solid #FF5000;
+	border-radius: 0.05rem
+}
+.remove_order{
+	float: right;
+	margin-left: 0.2rem;
+	margin-top: 0.3rem;
+	padding: 0.2rem 0.4rem;
+	border: 1px solid #999;
+	border-radius: 0.05rem
+}
+
+.order{
+	display: none;
+	overflow: hidden;
+	height: 15rem;
+}
+.order_error{
+	margin: 3.9rem auto;
+	width: 6.3rem;
+	text-align: center;
+	font-size: 0.6rem;
+}
+.order_img{
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	margin: 0 auto;
+	margin-bottom: 0.55rem;
+	width: 3.95rem;
+	height: 3.95rem;
+	background-color: #cccccc;
+	border-radius: 50%;
+	color: white;
+	font-size: 2.8rem;
+}
+.order_img>p{
+	height: 2.8rem;
+	line-height: 2.5rem;
+}
+.order_suggest{
+	margin-top: 0.4rem;
+	color: #999;
+}
+.order_stroll{
+	display: block;
+	margin: 0 auto;
+	margin-top: 0.4rem;
+	width: 3rem;
+	height: 0.75rem;
+	line-height: 0.75rem;
+	border: 1px solid #333;
+	border-radius: 0.1rem;
+}
+
+.over_lay{
+	display: none;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.2);
+}
+.confirm{
+	display: none;
+	z-index: 20;
+	position: fixed;
+	top: calc(50% - 3rem);
+	left: 2.25rem;
+	width: 11.5rem;
+	background-color: rgba(248,248,248,.95);
+	border-radius: 0.4rem;
+	font-size: 0.6rem;
+	overflow: hidden;
+}
+.confirm p{
+	margin-top: 0.4rem;
+	text-align: center;
+}
+.confirm .warnMsg{
+	margin-top: 0.6rem;
+}
+.doBtn{
+	margin-top: 0.4rem;
+	height: 1.8rem;
+	border-top: 1px solid #ddd;
+}
+.doBtn button{
+	box-sizing: border-box;
+	float: left;
+	width: 50%;
+	height: 100%;
+	font-weight: bold;
+	font-size: 0.75rem;
+	background-color: rgba(248,248,248,.95);
+	color: #5F646C;
+	border: 0;
+	outline: none;
+	/*line-height: 100%;*/
+}
+.doBtn .cancel{
+	border-right: 1px solid #ddd;
+}
+
+.delete_success{
+	display: none;
+	position: fixed;
+	z-index: 199;
+	top: calc(50% - 2rem);
+	left: 2.2rem;
+	padding: 0.8rem;
+	width: 10rem;
+	text-align: center;
+	font-size: 0.6rem;
+	color: white;
+	border-radius: 0.2rem;
+	background-color: rgba(0,0,0,.7);
+}

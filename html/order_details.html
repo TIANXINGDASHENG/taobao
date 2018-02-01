@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>订单详情</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mytaobao.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/order_details.css"/>
+		<link rel="icon" type="image/x-icon" href="../img/logo.ico"/>
+	</head>
+	<body>
+		<header>
+			<a href="order.html" class="back"><span class="icon-back"></span></a>
+			订单详情
+		</header>
+		<div class="success-header">
+			<p>交易成功</p>
+			<img src="../img/success_bg.png" />
+		</div>
+		<div class="success-content">
+			<div class="success-content-a clear">
+				<p>收货人:<span id="consignee"></span><span id="telephone"></span></p>
+				<p>收货地址:<span id="addr"></span></p>
+			</div>
+			<div class="success-content-b">
+				<div class="seller">
+					<img src="../img/icon_tianmao.png" class="icon_tianmao"/>
+					<a href="javascript:;" class="store_name">
+						<span>店铺名称</span>
+						<span class="icon-right"></span>
+					</a>
+				</div>
+				<div class="content">
+					<img src="" class="content_img"/>
+					<p class="content_info"></p>
+					<div class="content_price">
+						<p class="price">￥<span></span></p>
+						<p class="nums">x<span class="commodity_num"></span></p>
+					</div>
+				</div>
+			</div>
+			<div class="success-content-c">
+				<p>订单编号:3199418026635400</p>
+				<p>支付宝交易号:2017041121001001620281846201</p>
+				<p class="creat_time">创建时间:2017-04-11 22:34:11</p>
+				<p class="pay_time">付款时间:2017-04-11 22:34:24</p>
+				<p>发货时间:2017-04-12 14:17:54</p>
+				<p>成交时间:2017-04-22 14:18:17</p>
+			</div>
+		</div>
+		<div class="dispose_order">
+			<div class="evaluate_order">评价</div>
+			<div class="sell">卖了换钱</div>
+			<div class="look_logistics">查看物流</div>
+			<div class="more">更多</div>
+		</div>
+	</body>
+	<script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var img_url="http://47.92.37.168/supermarket/img/";
+		var order_details=sessionStorage.getItem('order_details');
+		var Json=JSON.parse(order_details);
+		var pro_id=Json.commodity_id;
+		var pro_num=Json.count;
+		var user_name=Json.user_name;
+		var consignee_phone=Json.consignee_phone;
+		var user_addr=Json.user_addr;
+		var img_src='';
+		$('#consignee').text(user_name);
+		$('#telephone').text(consignee_phone);
+		$('#addr').text(user_addr);
+		var order_time=parseInt(Json.order_time);
+		var d=new Date(order_time);
+		$('.creat_time').text("创建时间："+formatDate(d));
+		$('.pay_time').text("付款时间："+formatDate(d));
+		$('.commodity_num').text(pro_num);
+		$.ajax({
+			type:"get"
+			,url:"http://47.92.37.168/supermarket/data/get_commodity_info.php"
+			,async:true
+			,data:{
+				'id':pro_id
+			}
+			,dataType:"jsonp"
+			,jsonp:"callback"
+			,success:function(data){
+				console.log(data);
+				img_src=img_url+data.img;
+				$('.content_img').attr('src',img_src);
+				$('.content_info').text(data.name);
+				$('.price span').text(data.price);
+			}
+		});
+		//点击商品图片跳转到商品详情页面
+		$('.content_img').click(function(){
+			sessionStorage.setItem('pro_id',pro_id);
+			location.href="details.html";
+		})
+		//点击商品名称跳转到商品详情页面
+		$('.content_info').click(function(){
+			sessionStorage.setItem('pro_id',pro_id);
+			location.href="details.html";
+		})
+		//点击评价订单跳到评价页面
+		$('.evaluate_order').click(function(){
+			sessionStorage.setItem('pro_id',pro_id);
+			sessionStorage.setItem('consignee_name',user_name);
+			sessionStorage.setItem('img_src',img_src);
+			location.href="evaluate.html";
+		})
+		//日期对象转换成本地时间格式-函数
+		function formatDate(now)   {     
+          	var year=now.getFullYear();     
+         	var month=now.getMonth()+1;     
+          	var date=now.getDate();     
+          	var hour=now.getHours();     
+          	var minute=now.getMinutes();     
+         	var second=now.getSeconds();     
+          	return year+"-"+zero(month)+"-"+zero(date)+" "+zero(hour)+":"+zero(minute)+":"+zero(second);     
+        }     
+        //时间前加0函数
+		function zero (x) {
+			return x<10?'0'+x:''+x;//三元运算符
+		}     
+	</script>
+</html>

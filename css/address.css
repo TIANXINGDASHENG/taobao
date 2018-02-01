@@ -1,0 +1,150 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+	color: #a6aeb2;
+}
+
+#lu_header{
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	width: 16rem;
+	height: 2rem;
+	background: white;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ccc;
+}
+#lu_header img{
+	position: relative;
+	float: left;
+	top: 0.6rem;
+	left: 0.6rem;
+	width: 0.55rem;
+	height: 0.875rem;
+}
+#lu_header span{
+	position: absolute;
+	left: 6rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 0.9rem;
+	color: #a6aeb2;
+	font-weight: 500;
+}
+/*******/
+.container{
+	overflow: hidden;
+	margin-top: 1.95rem;
+	margin-bottom: 2.3rem;
+}
+.create_addr{
+	display: none;
+	z-index: 10;
+	position: fixed;
+	top: 1.95rem;
+	left: 0;
+	width: 100%;
+	background-color: #eee;
+}
+#lu_box{
+	width: 16rem;
+	background: #eeeeee;
+	font-size: 0.6rem;
+}
+#lu_ul{
+	width: 16rem;
+}
+#lu_ul li{
+	width: 16rem;
+	height: 3.52rem;
+	background: white;
+	border-bottom: 0.025rem solid #ccc;
+	color: #999;
+}
+#lu_ul li a{
+	display: block;
+	height: 0.95rem;
+	position: relative;
+	left: 0.4rem;
+	top: 0.5rem;
+	font-size: 0.7rem;
+	color: #999;
+}
+#lu_ul li n{
+	display: block;
+	float: right;
+	width: 4.25rem;
+	height: 0.95rem;
+	position: relative;
+	right: 3rem;
+	top: -0.5rem;
+	/*color: #ccc;*/
+	font-size: 0.75rem;
+}
+#lu_ul li p{
+	width: 12.9rem;
+	height: 1.5rem;
+	position: relative;
+	left: 0.4rem;
+	top: 0.5rem;
+	/*color: #666;*/
+}
+#lu_ul li img{
+	width: 1rem;
+	height: 0.8rem;
+	position: relative;
+	float: right;
+	right: 0.8rem;
+	top: -0.9rem;
+	color: #ccc;
+	font-size: 0.5rem;
+}
+#lu_ul li.bgcolor{
+	background: #5e6b85;
+	color: white;
+}
+#lu_ul li.bgcolor a{
+	color: white;
+}
+/**/
+#lu_footer{
+	position: fixed;
+	z-index: 99;
+	left: 0;
+	bottom: 0;
+	width: 16rem;
+	height: 2.3rem;
+	line-height: 2.3rem;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-align: center;
+	background-color: white;
+}
+#lu_footer a{
+	display: block;
+	height: 2.3rem;
+	background: #ff5500;
+	color: white;
+}
+.save_addr{
+	display: none;
+}
+
+.warnMsg{
+	display: none;
+	position: fixed;
+	z-index: 199;
+	top: calc(50% - 2rem);
+	left: 2.2rem;
+	padding: 0.8rem;
+	width: 10rem;
+	text-align: center;
+	font-size: 0.6rem;
+	color: white;
+	border-radius: 0.2rem;
+	background-color: rgba(0,0,0,.7);
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>管理收货地址</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/area.css"/>
+		<link rel="stylesheet" href="../css/address.css" />
+		<link rel="icon" type="image/x-icon" href="../img/logo.ico"/>
+		<script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/area.js" ></script>
+	</head>
+	
+	<body>
+		<div id="lu_header">
+			<a href="javascript:;" id="back"><img src="../img/set1_03.jpg"/></a>
+			<span>管理收货地址</span>
+		</div>
+		<div class="container">
+			<div id="lu_box">
+				<ul id="lu_ul">
+					<!--<li class="bgcolor"><a>收货人：路亚军</a><n>18811761131</n><p>收获地址：北京北京市大兴区天宫院街道 大兴二职学校</p><img class="img_dui" src="../img/dui_03.jpg"/></li>
+					<li><a>收货人：路亚军</a><n>18811761131</n><p>收获地址：北京北京市大兴区天宫院街道 北京市大兴区天宫院小区大兴二职</p></li>-->
+				</ul>
+			</div>
+			<div class="create_addr">
+				<div id="addAddress">
+					<div class="address_input">
+						<input class="address_input1" type="text" placeholder="省市区" id="shengshi" onClick="getProvinceBuy()" readonly="readonly">
+					</div>
+					<div class="address_input">
+						<input type="text" placeholder="请输入街道地址" class="address_input2 street" />
+					</div>
+					<div class="address_input">
+						<input type="text" placeholder="请输入详细地址" class="address_input2 details_address" />
+					</div>
+					<div class="address_input">
+						<input type="text" placeholder="请输入收货人姓名" class="address_input2 receive_name" />
+					</div>
+					<div class="address_input">
+						<input type="text" placeholder="请输入收入联系电话" class="address_input2 telephone" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="lu_footer">
+			<a href="javascript:;" class="newcreate">新增收货地址</a>	
+			<a href="javascript:;" class="save_addr">保存地址</a>	
+		</div>
+		<div class="warnMsg">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var flag_back=true;
+		var username=sessionStorage.getItem("username");
+		var user_addr=sessionStorage.getItem('useraddr');
+		//从数据库获取用户地址
+		if (user_addr) {
+			var arr=user_addr.split('-');
+			$('#lu_ul').append("<li class='bgcolor'><a>收货人："+arr[3]+"</a><n>"+arr[4]+"</n><p>收货地址："+arr[0]+arr[1]+arr[2]+"</p><img class='img_dui' src='../img/dui_03.jpg' /></li>");
+		}
+		//点击地址栏修改本地址
+		$(document).on('click','#lu_ul li',function(){
+			flag_back=false;
+			$('#lu_box').css('display','none');
+			$('.create_addr').css('display','block');
+			$('.newcreate').css('display','none');
+			$('.save_addr').css('display','block');
+			var user_addr=sessionStorage.getItem('useraddr');
+			var arr=user_addr.split('-');
+			$('#shengshi').val(arr[0]);
+			$('.street').val(arr[1]);
+			$('.details_address').val(arr[2]);
+			$('.receive_name').val(arr[3]);
+			$('.telephone').val(arr[4]);
+		})
+		//点击返回按钮
+		$('#back').click(function(){
+			if (flag_back) {
+				location.href="personal.html";
+			} else{
+				$('#lu_box').css('display','block');
+				$('.create_addr').css('display','none');
+				$('.newcreate').css('display','block');
+				$('.save_addr').css('display','none');
+				$('.dqld_div ul').css('display','none');
+				flag_back=true;
+			}
+		})
+		//点击新增收货地址
+		$('.newcreate').click(function(){
+			flag_back=false;
+			$('#lu_box').css('display','none');
+			$('.create_addr').css('display','block');
+			$('.newcreate').css('display','none');
+			$('.save_addr').css('display','block');
+			$('#shengshi').val('');
+			$('.street').val('');
+			$('.details_address').val('');
+			$('.receive_name').val('');
+			$('.telephone').val('');
+		})
+		$('.create_addr').height( $(window).height()-$('#lu_header').height()-$('#lu_footer').height() );
+		//点击保存地址，往数据库添加地址，并且页面中新增地址
+		var reg_details=/^\d{5,}$/;
+		var reg_tel=/^1[34578]\d{9}$/;
+		$('.save_addr').click(function(){
+			if (username) {
+				var sheng=$('#shengshi').val();
+				var street=$('.street').val();
+				var details=$('.details_address').val();
+				var receive_name=$('.receive_name').val();
+				var telephone=$('.telephone').val();
+				if (sheng&&street&&details&&receive_name&&telephone) {
+					if (receive_name.length<2||receive_name.length>15) {
+						$('.warnMsg').text("收货人姓名：2-15个字符限制");
+						$('.warnMsg').fadeIn(100,function(){
+							setTimeout(function(){
+								$('.warnMsg').fadeOut(100);
+							},3000);
+						});
+						return;
+					}
+					if (details.length<5||details.length>60) {
+						$('.warnMsg').text("收货人地址最少5个字，最多不能超过60个字");
+						$('.warnMsg').fadeIn(100,function(){
+							setTimeout(function(){
+								$('.warnMsg').fadeOut(100);
+							},3000);
+						});
+						return;
+					}
+					if (reg_details.test(details)) {
+						$('.warnMsg').text("收货人地址不能全为数字");
+						$('.warnMsg').fadeIn(100,function(){
+							setTimeout(function(){
+								$('.warnMsg').fadeOut(100);
+							},3000);
+						});
+						return;	
+					}
+					if (!reg_tel.test(telephone)) {
+						$('.warnMsg').text("内地手机号码为11位数字，海外手机号码为6-20位数字");
+						$('.warnMsg').fadeIn(100,function(){
+							setTimeout(function(){
+								$('.warnMsg').fadeOut(100);
+							},3000);
+						});
+						return;	
+					}
+					var user_addr2=sheng+"-"+street+"-"+details+"-"+receive_name+"-"+telephone;
+					$.ajax({
+						type:"get"
+						,url:"http://47.92.37.168/supermarket/data/user_update_addr.php"
+						,async:true
+						,data:{
+							'user_addr':user_addr2,
+							'user_phone':username
+						}
+						,dataType:"jsonp"
+						,jsonp:"callback"
+						,success:function(data){
+							console.log(data);
+							if (data=='success') {
+								$('#lu_box').css('display','block');
+								$('.create_addr').css('display','none');
+								$('.newcreate').css('display','block');
+								$('.save_addr').css('display','none');
+								flag_back=true;
+								sessionStorage.setItem("useraddr",user_addr2);
+								var arr=user_addr2.split('-');
+								$('#lu_ul').empty();
+								$('#lu_ul').append("<li class='bgcolor'><a>收货人："+arr[3]+"</a><n>"+arr[4]+"</n><p>收货地址："+arr[0]+arr[1]+arr[2]+"</p><img class='img_dui' src='../img/dui_03.jpg' /></li>");
+								$('.warnMsg').text("操作成功");
+								$('.warnMsg').fadeIn(100,function(){
+									setTimeout(function(){
+										$('.warnMsg').fadeOut(100);
+									},3000);
+								});
+							}
+						}
+					});
+				} else{
+					$('.warnMsg').text("内容不能为空！");
+					$('.warnMsg').fadeIn(100,function(){
+						setTimeout(function(){
+							$('.warnMsg').fadeOut(100);
+						},2000);
+					});
+				}
+			} else{
+				location.href="login.html";
+			}
+		})
+	</script>
+</html>

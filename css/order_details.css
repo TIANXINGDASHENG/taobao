@@ -1,0 +1,166 @@
+li{ list-style: none;}
+a{ text-decoration: none; color: black;}
+img{ display: block;}
+.left{ float: left; display: inline;}
+.right{ float: right; display: inline;}
+.clear:after{ clear: both; content: ''; display: block;}
+.clear{zoom: 1;}
+body{ font-family: "宋体"; background-color: #eeeeee;}
+/*以上为公共样式*/
+body{
+	background: #EEEEEE;
+}
+header{
+	position: relative;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	background-color: white;
+	font-size: 0.9rem;
+}
+.back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 4.5rem;
+	height: 2rem;
+}
+.back span{
+	line-height: 0;
+	margin-left: -2.5rem;
+	font-size: 1rem;
+}
+.success-header{
+	width: 100%;
+	height:4.25rem ;
+	background: #FF7B0E;
+}
+.success-header p{
+	font-size:0.6rem ;
+	color: white;
+	float: left;
+	margin: 1.7rem 0 0 1.72rem;
+}
+.success-header img{
+	width: 7.8rem;
+	height:4.27rem ;
+	float: right;
+}
+.success-content{
+	margin-bottom: 2.8rem;
+	width: 100%;
+}
+.success-content-a{
+	background-color: white;
+	padding: 0.5rem;
+	border-bottom: 1px solid #ccc;
+}
+.success-content-a p:nth-child(1){
+	font-size: 0.8rem;
+	color: #A6A6A6;
+}
+.success-content-a p:nth-child(1) span:last-child{
+	color: black;
+	font-size: 0.8rem;
+	margin-left: 1.8rem;
+}
+.success-content-a p:nth-child(2){
+	font-size: 0.8rem;
+	color: #808080;
+	margin-top: 0.37rem;
+}
+.success-content-b{
+	background-color: white;
+	margin-top: 0.325rem;
+	background-color: white;
+	border-bottom: 1px solid #d9d9d9;
+}
+.seller{
+	display: -webkit-box;
+	padding: 0 0.45rem;
+	height: 1.45rem;
+}
+.icon_tianmao{
+	margin-right: 0.4rem;
+	margin-top: 0.45rem;
+	width: 0.575rem;
+	height: 0.575rem;
+}
+.store_name{
+	display: block;
+	-webkit-box-flex: 1;
+	line-height: 1.45rem;
+	font-size: 0.6rem;
+}
+.store_name span{
+	float: left;
+}
+.icon-right{
+	font-size: 0.7rem;
+	color: #82898f;
+}
+.content{
+	display: -webkit-box;
+	padding: 0.175rem 0.45rem;
+	height: 2.15rem;
+	background-color: #f5f5f5;
+}
+.content_img{
+	margin-right: 0.4rem;
+	width: 2.15rem;
+	height: 2.15rem;
+}
+.content_info{
+	-webkit-box-flex: 1;
+	font-size: 0.6rem;
+}
+.content_price{
+	width: 2.5rem;
+	font-size: 0.6rem;
+}
+.price{
+	text-align: right;
+	font-weight: bold;
+}
+.nums{
+	margin-top: 0.15rem;
+	text-align: right;
+	color: #666;
+}
+.success-content-c{
+	margin-top: 0.5rem;
+	padding: 0.5rem;
+	background-color: white;
+	font-size: 0.6rem;
+	color: #999;
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+}
+.success-content-c p{
+	margin-bottom: 0.3rem;
+}
+/*底部固定定位*/
+.dispose_order{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1.9rem;
+	padding-right: 0.45rem;
+	background-color: white;
+	border-top: 1px solid #E7E7E7;
+	font-size: 0.7rem;
+	text-align: right;
+}
+.dispose_order div{
+	float: right;
+	margin-left: 0.2rem;
+	margin-top: 0.3rem;
+	padding: 0.2rem 0.4rem;
+	border: 1px solid #999;
+	border-radius: 0.05rem
+}
+.dispose_order .evaluate_order{
+	border: 1px solid #FF5000;
+	color: #FF5000;
+}

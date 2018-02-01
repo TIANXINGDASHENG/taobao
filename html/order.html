@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>全部订单</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mytaobao.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/order.css"/>
+		<link rel="icon" type="image/x-icon" href="../img/logo.ico"/>
+	</head>
+	<body>
+		<header>
+			<div class="order_manage">
+				订单管理
+				<div class="back">
+					<span class="icon-back"></span>
+				</div>
+			</div>
+			<ul class="nav">
+				<li class="all current">全部</li>
+				<li class="waitPay">待付款</li>
+				<li class="waitSend">待发货</li>
+				<li class="waitConfirm">待收货</li>
+				<li class="waitRate">待评价</li>
+			</ul>
+		</header>
+		<div class="container">
+			<ul class="order_list clear">
+				<!--<li>
+					<div class="seller">
+						<img src="../img/icon_tianmao.png" class="icon_tianmao"/>
+						<a href="javascript:;" class="store_name">
+							<span>朗盛话费充值专营店</span>
+							<span class="icon-right"></span>
+						</a>
+						<div class="state">
+							<p class="state_success">交易成功</p>
+						</div>
+					</div>
+					<div class="content">
+						<img src="../img/huafei.jpg" class="content_img"/>
+						<p class="content_info">北京移动50元话费充值 手机充值 充值卡 快充 秒充  交话费  </p>
+						<div class="content_price">
+							<p class="price">￥<span>49.98</span></p>
+							<p class="nums">x<span class="commodity_num">1</span></p>
+						</div>
+					</div>
+					<div class="total">
+						<span>共<span class="commodity_num">1</span>件商品</span>
+						<span>合计：<b class="total_price">￥49.98</b></span>
+						<span>（含运费<b>￥0.00</b>）</span>
+					</div>
+					<div class="dispose_order">
+						<div class="evaluate_order">评价</div>
+						<div class="remove_order">删除订单</div>
+					</div>
+				</li>-->
+			</ul>
+			<div class="order">
+				<div class="order_error">
+					<div class="order_img">
+						<p><span class="icon-form"></span></p>
+					</div>
+					<p class="order_txt">您还没有相关的订单</p>
+					<p class="order_suggest">可以去看看有哪些想买</p>
+					<a href="../index.html" class="order_stroll">随便逛逛</a>
+				</div>
+			</div>
+		</div>
+		<div class="over_lay">
+			
+		</div>
+		<div class="confirm">
+			<p class="warnMsg">确认删除订单?</p>
+			<p class="warnMsg_down">删除之后将无法恢复</p>
+			<div class="doBtn">
+				<button class="cancel">取消</button>
+				<button class="ok">确定</button>
+			</div>
+		</div>
+		<div class="delete_success">
+			删除订单成功
+		</div>
+	</body>
+	<script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/order.js" type="text/javascript" charset="utf-8"></script>
+</html>

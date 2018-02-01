@@ -1,0 +1,187 @@
+/*@import url("reset.css");*/
+body {
+	background: #F4F4F4;
+}
+
+#header {
+	width: 100%;
+	height: calc(40rem/20);
+	border-bottom: 1px solid #E7E7E7;
+	background: #fff;
+}
+
+#header>div {
+	margin: 0 calc(10rem/20);
+	height: calc(40rem/20);
+	line-height: calc(35rem/20);
+}
+
+#header>div>a>img {
+	width: calc(92rem/92);
+	height: calc(92rem/92);
+}
+
+#header>div>a {
+	text-decoration: none;
+	float: left;
+}
+
+#header>div>div {
+	width: calc(520rem/40);
+	float: left;
+	text-align: center;
+}
+
+#header>div>div>span {
+	font-size: calc(26rem/40);
+}
+
+#content {
+	width: 100%;
+	background: #fff;
+}
+
+#content>div:nth-child(1) {
+	width: 100%;
+	height: calc(45rem/20);
+	border-bottom: 1px solid #E7E7E7;
+}
+
+#content>div:nth-child(1)>div {
+	margin: 0 calc(10rem/20);
+	height: calc(45rem/20);
+	line-height: calc(40rem/20);
+}
+
+#content>div:nth-child(1)>div>img {
+	float: left;
+	width: calc(1.2rem);
+	height: calc(1.2rem);
+	margin-right: calc(10rem/40);
+	margin-top: calc(25rem/40)
+}
+
+#content>div:nth-child(1)>div>div {
+	float: left;
+}
+
+#content>div:nth-child(1)>div>div>span {
+	font-size: calc(0.6rem);
+	color: #AAAAAA;
+	padding-right: calc(1.8rem)
+}
+
+#content>div:nth-child(1)>div>div>span>img {
+	width: 1rem;
+	height: 1rem;
+}
+
+#content>div:nth-child(2) {
+	width: 100%;
+	height: calc(79rem/20);
+	border-bottom: 1px solid #E7E7E7;
+	font-size: calc(0.6rem);
+	text-indent: calc(10rem/20);
+	outline: none;
+	padding-top: calc(0.5rem);
+}
+
+#content>div:nth-child(3) {
+	margin: 0 calc(10rem/20);
+	height: calc(40rem/20);
+	line-height: calc(35rem/20)
+}
+
+#content>div:nth-child(3)>img {
+	width: 1rem;
+	height: 1rem;
+}
+
+#content>div:nth-child(3)>span {
+	font-size: calc(0.6rem);
+}
+
+#content>div:nth-child(3)>span:nth-child(2) {
+	color: #262626;
+	margin-right: calc(1.6rem);
+}
+
+#content>div:nth-child(3)>span:nth-child(3) {
+	color: #AAAAAA;
+}
+
+.star{
+	margin-top: 0.5rem;
+	margin-bottom: 2rem;
+	padding: 0 0.5rem 0.5rem;
+	background-color: white;
+	font-size: 0.6rem;
+	color: #666;
+}
+.star_top{
+	height: 1.8rem;
+	line-height: 1.8rem;
+}
+.star_top img{
+	float: left;
+	margin-top: 0.5rem;
+	width: 0.85rem;
+	height: 0.85rem;
+}
+.star_top span{
+	float: left;
+	margin-left: 0.4rem;
+}
+.star_content{
+	height: 1.8rem;
+}
+.star_option{
+	float: left;
+	margin-right: 0.8rem;
+	line-height: 1.8rem;
+}
+.star_num{
+	float: left;
+}
+.star_num img{
+	float: left;
+	margin-top: 0.5rem;
+	margin-right: 0.8rem;
+	width: 0.85rem;
+	height: 0.85rem;
+}
+.star_result{
+	float: left;
+	line-height: 1.8rem;
+	color: #999;
+}
+/*底部固定定位*/
+#footer {
+	width: 100%;
+	height: calc(40rem/20);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #FF5302;
+	text-align: center;
+	line-height: calc(40rem/20);
+	font-size: calc(24rem/40);
+	color: #fff;
+}
+/*提示框*/
+.prompt{
+	display: none;
+	position: fixed;
+	z-index: 199;
+	top: calc(50% - 3.5rem);
+	left: 4rem;
+	padding: 0.5rem 0.8rem;
+	width: 6.4rem;
+	line-height: 1.5rem;
+	text-align: center;
+	font-size: 0.85rem;
+	font-weight: bold;
+	color: white;
+	border-radius: 0.2rem;
+	background-color: rgba(0,0,0,.5);
+}

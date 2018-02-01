@@ -1,0 +1,14 @@
+$('#lu_box').height($(document).innerHeight());
+//点击设置按钮
+$('.set_btn').click(function(){
+	$('#lu_box').animate({left:'0'},300);
+})
+//点击返回按钮
+$('#lu_img_left').click(function(){
+	$('#lu_box').animate({left:'16rem'},300);
+})
+//点击退出按钮，清除localStorage和sessionStorage
+$('.login').click(function(){
+	localStorage.clear();
+	sessionStorage.clear();
+})

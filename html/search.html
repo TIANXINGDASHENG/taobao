@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>seach</title>
+    	<link rel="stylesheet" href="../js/svg/font.css">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mytaobao.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/seach.css"/>
+		<link rel="icon" type="image/x-icon" href="../img/logo.ico"/>
+	</head>
+	<body>
+		<div class="header-seach clear">
+			<a href="../index.html" class="log-shop lt">
+				<span class="icon-fangzi"></span>天猫超市
+			</a>
+			<input type="search" id="search" placeholder="搜索天猫超市" class="search-k"/>
+			<div class="rt okbtn">
+				<input type="button" id="btn" value="筛选" class="btnok"/>
+			</div>
+		</div>
+		<div class="tm-filter">
+			<ul>
+				<li class="cur" id="synthesize">综合</li>
+				<li id="hot_sale">热销</li>
+				<li data-sort="price" id="price">价格<s></s></li>
+			</ul>
+		</div>
+		<div class="all-list">
+			<ul class="all-list-ul">
+				<li class="list-product">
+					<a href="details.html" class="fig-img">
+						<img src="../img/images/03.gif"/>
+					</a>
+					<div class="fig-text">
+						<div class="list-txt">
+							<a href="details.html">维达蓝色经典系列卫生巾3层140g27卷有芯卷纸&nbsp;箱装</a>
+						</div>
+						<div class="list-price clear">
+							<div class="lt">
+								<p>月销量13万件</p>
+								<strong>¥49.90</strong>
+								<s>¥79.90</s>
+							</div>
+							<button class="rt"><span class="icon-cart"></span></button>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="noresult">
+				喵~没找到与“<span></span>”相关的商品哦
+			</div>
+		</div>
+		<footer>
+			<img src="../img/search_menu.png" class="search_menu"/>
+		</footer>
+		<a href="javascript:;" class="cart">
+			<div class="cart_a">
+				<span class="icon-cart"></span>
+			</div>
+		</a>
+		<div class="searchBox">
+			<div class="sb_search">
+				<form class="inputwrap">
+					<input type="button" class="tijiao"/>
+					<input type="search" class="search" placeholder="搜索天猫超市" />
+					<input type="reset" class="reset" />
+				</form>
+				<button class="close_searchBox">取消</button>
+			</div>
+			<div class="sb_menu">
+				<ul class="list">
+					<!--<li>阿迪达斯沐浴露</li>-->
+					<!--<li>阿迪达斯沐浴露2</li>-->
+					<!--<li>阿迪达斯沐浴露</li>-->
+					<!--<li>阿迪达斯沐浴露2</li>-->
+				</ul>
+				<div class="history">
+					<h3>您最近搜索的商品记录</h3>
+					<ul class="history_list">
+						<!--<li>苹果</li>
+						<li>香蕉</li>-->
+					</ul>
+					<button id="history_delete">删除</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/search.js"></script>
+</html>

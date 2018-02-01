@@ -1,0 +1,330 @@
+li{ list-style: none;}
+a{ text-decoration: none; color: black;}
+img{ display: block;}
+.left{ float: left; display: inline;}
+.right{ float: right; display: inline;}
+.clear:after{ clear: both; content: ''; display: block;}
+.clear{zoom: 1;}
+body{ font-family: "宋体"; background-color: #eeeeee; overflow-x: hidden;}
+/*以上为公共样式*/
+
+/*头部*/
+header{
+	position: relative;
+    height: 4.2rem;
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.set_btn{
+	float: right;
+	margin-top: 0.35rem;
+	margin-right: 0.425rem;
+	width: 2.35rem;
+	height: 1.275rem;
+	line-height: 1.275rem;
+	text-align: center;
+	background-color: rgba(0,0,0,.5);
+	color: white;
+	font-size: 0.6rem;
+	border-radius: 0.6rem;
+}
+.user_nick{
+	float: left;
+	margin-left: 3.6rem;
+	margin-top: 3rem;
+	padding-right: 1rem;
+	height: 1.1rem;
+	line-height: 1.1rem;
+	font-size: 0.575rem;
+	color: white;
+	background: url(../img/v0.png) no-repeat right;
+	background-size: 0.75rem;
+}
+.user_photo{
+	position: absolute;
+	left: calc(25rem/40);
+	top: calc(114rem/40);
+	width: 2.65rem;
+	height: 2.65rem;
+	border: 0.1rem solid white;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.user_photo img{
+	width: 100%;
+	height: 100%;
+}
+/*收藏*/
+.collect{
+	margin-bottom: 0.45rem;
+	padding-left: 4.15rem;
+	height: 1.9rem;
+	background-color: white;
+	display: -webkit-box;
+}
+.collect>a{
+	display: block;
+	-webkit-box-flex: 1;
+	text-align: center;
+	margin-top: 0.55rem;
+	height: 0.8rem;
+}
+.collect>a.border_right{
+	border-right: 1px solid #ccc;
+}
+.collect>a p{
+	text-align: center;
+	font-size: 12px;
+}
+.collect>a p:first-child{
+	margin-top: -0.3rem;
+}
+/*订单*/
+.order_act{
+	margin-bottom: 0.45rem;
+    border-bottom: 1px solid #e7e7e7;
+	background-color: white;
+}
+.order_list{
+	height: 2.35rem;
+	display: -webkit-box;
+}
+.order_list li{
+	-webkit-box-flex: 1;
+	width: 0;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+}
+.order_list li a{
+	display: block;
+	color: #666;
+	
+}
+.order_list li a p{
+	text-align: center;
+	font-size: 12px;
+}
+.order_list li a p:first-child span{
+	width: 0.75rem;
+	height: 0.75rem;
+	font-size: 0.75rem;
+}
+.order_list li a p:last-child{
+	margin-top: 0.1rem;
+}
+.wait_evaluate{
+	position: relative;
+}
+.wait_evaluate .number{
+	position: absolute;
+	top: 0.1rem;
+	right: 0.85rem;
+	width: 0.65rem;
+	height: 0.65rem;
+	line-height: 0.65rem;
+	text-align: center;
+	font-weight: bold;
+	font-size: 0.45rem;
+	color: #FF5000;
+	border: 0.05rem solid #FF5000;
+	border-radius: 50%;
+	background-color: white;
+}
+/*全部订单*/
+.all_order{
+	border-top: 1px solid #e7e7e7;
+	height: 1.425rem;
+	padding-left: 0.4rem;
+}
+.all_order>a{
+	display: -webkit-box;
+	height: 100%;
+}
+.ico{
+	margin-top: 0.25rem;
+	margin-right: 0.4rem;
+	width: 0.9rem;
+	height: 0.9rem;
+	background-color: #5090cd;
+	border-radius: 0.1rem;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+}
+.ico.bg_yellow{
+	background-color: #e7a200;
+}
+.ico.bg_cyan{
+	background-color: #00aeef;
+}
+.ico.bg_red{
+	background-color: #e64c2e;
+}
+.ico span{
+	display: block;
+	font-size: 0.6rem;
+	color: white;
+}
+.title{
+	float: left;
+	height: 1.425rem;
+	line-height: 1.425rem;
+	font-size: 14px;
+}
+.arrow{
+	float: right;
+	margin-right: 0.3rem;
+	height: 100%;
+	line-height: 100%;
+}
+.arrow span{
+	font-size: 0.5rem;
+	color: #999999;
+}
+.lookAll{
+	float: right;
+	margin-right: 0.2rem;
+	height: 1.425rem;
+	line-height: 1.425rem;
+	font-size: 12px;
+	color: #999999;
+}
+.core_entry{
+	margin-bottom: 0.45rem;
+    border-bottom: 1px solid #e7e7e7;
+	background-color: white;
+}
+.label_act{
+	height: 1.425rem;
+	padding-left: 0.4rem;
+}
+.label_act>a{
+	height: 100%;
+	display: -webkit-box;
+}
+.label_act_a{
+	-webkit-box-flex: 1;
+}
+.label_act_a.border_bottom{
+	border-bottom: 1px solid #e7e7e7;
+}
+/*底部*/
+footer{
+	display: -webkit-box;
+	height: 1.4rem;
+	background-color: white;
+}
+footer>a{
+	display: block;
+	-webkit-box-flex: 1;
+	width: 0;
+	line-height: 1.4rem;
+	text-align: center;
+	font-size: 12px;
+}
+footer>a.border_right{
+	border-right: 1px solid #ccc;
+}
+footer>a .nick{
+	margin-top: 0.5rem;
+	height: 0.45rem;
+	line-height: 0.45rem;
+	text-align: left;
+	text-indent: 1em;
+	border-right: 0.05rem solid #ccc ;
+}
+/*设置按钮弹出div*/
+#lu_box{
+	position: absolute;
+	top: 0;
+	left: 16rem;
+	width: 16rem;
+	background: #eeeeee;
+}
+#lu_header{
+	width: 16rem;
+	height: 1.95rem;
+	background: white;
+}
+#lu_img_left{
+	position: relative;
+	float: left;
+	top: 0.6rem;
+	left: 0.6rem;
+	width: 0.55rem;
+	height: 0.875rem;
+	padding-right: 2.5rem;
+}
+#lu_img_right{
+	position: relative;
+	float: right;
+	top: 0.6rem;
+	right: 0.6rem;
+	width: 1.05rem;
+	height: 0.875rem;
+}
+#lu_header span{
+	position: absolute;
+	left: 7rem;
+	top: 0.6rem;
+	text-align: center;
+	font-size: 0.9rem;
+	display: block;
+	width: 2rem;
+	color: #a6aeb2;
+	font-weight: 500;
+	height: 0.875rem;
+}
+
+/**/
+#lu_ul{
+	width: 16rem;
+	height: 3.425rem;
+	margin-top: 0.4rem;
+}
+#lu_ul li{
+	width: 16rem;
+	height: 1.7rem;
+	background: white;
+}
+#lu_ul li:nth-child(2){
+	margin-top: 0.025rem;
+}
+#lu_ul li a{
+	display: block;
+	height: 1.7rem;
+	color: #999;
+}
+#lu_ul li img{
+	float: right;
+	margin-right: 0.5rem;
+	width: 0.4rem;
+	height: 0.575rem;
+	margin-top: 0.5rem;
+	/*top: 0.5rem;*/
+}
+#lu_ul li span{
+	float: left;
+	margin-left: 0.5rem;
+	height: 1.7rem;
+	line-height: 1.7rem;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+/**/
+#lu_back{
+	display: block;
+	width: 15.1rem;
+	height: 2rem;
+	border-radius: 0.15rem;
+	background: #ff5000;
+	color: white;
+	position: relative;
+	left: 0.45rem;
+	top: 1rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: 500;
+}

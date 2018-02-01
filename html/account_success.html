@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>付款成功</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/account_success.css"/>
+		<link rel="icon" type="image/x-icon" href="../img/logo.ico"/>
+	</head>
+	<body>
+		<div class="success-header">
+			<p>完成付款</p>
+			<img src="../img/success_bg.png" />
+		</div>
+		<div class="success-content">
+			<div class="success-content-a">
+				<p>收货人:<span id="consignee">某某某</span><span id="telephone">13717538870</span></p>
+				<p>收货地址:<span id="addr">北京市大兴区天宫院大兴二职</span></p>
+			</div>
+			<div class="success-content-b">
+				<p>总价:<span id="total_price">￥28.90</span></p>
+				<a href="order.html" class="success-content-b-left">查看订单</a>
+				<a href="../index.html" class="success-content-b-right">返回首页</a>
+			</div>
+		</div>
+	</body>
+	<script src="../js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var total_p=sessionStorage.getItem('total_price');
+		var useraddr=sessionStorage.getItem('useraddr');
+		var arr=useraddr.split('-');
+		total_price.innerHTML="￥"+total_p;
+		$('#consignee').text(arr[3]);
+		$('#telephone').text(arr[4]);
+		$('#addr').text(arr[0]+arr[1]+arr[2]);
+	</script>
+</html>
